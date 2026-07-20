@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Paithiyo ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9acb,#ffd6ec);
+overflow-x:hidden;
+text-align:center;
+color:white;
+}
+
+.page{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+h1{
+font-size:45px;
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+max-width:700px;
+line-height:1.8;
+}
+
+button{
+padding:16px 40px;
+font-size:20px;
+border:none;
+border-radius:50px;
+background:#ff2f7d;
+color:white;
+cursor:pointer;
+margin-top:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.gift{
+font-size:120px;
+animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-20px);}
+}
+
+.hidden{
+display:none;
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+left:0;
+top:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+color:#ff0066;
+font-size:22px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+width:100%;
+max-width:1000px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.letter{
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+margin-top:40px;
+max-width:800px;
+}
+
+.footer{
+margin-top:40px;
+font-size:18px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="page" id="page1">
+
+<div class="gift">🎁</div>
+
+<h1>Happy Birthday Paithiyo ❤️</h1>
+
+<p>
+Today is all about celebrating you. 💕
+Click the gift below for a surprise made with love.
+</p>
+
+<button onclick="openGift()">Open My Gift 🎁</button>
+
+</div>
+
+<div class="page hidden" id="page2">
+
+<h1>🎉 Happy Birthday Paithiyo 🎉</h1>
+
+<p>
+May your smile always shine brighter than the stars ✨
+You deserve happiness, success, laughter, and all the beautiful moments life has to offer. 💖
+</p>
+
+<div class="gallery">
+
+<img src="1000097473.jpg" alt="Photo 1">
+<img src="1000094971.jpg" alt="Photo 2">
+<img src="1000094969.jpg" alt="Photo 3">
+<img src="1000093017.jpg" alt="Photo 4">
+<img src="1000091184.jpg" alt="Photo 5">
+<img src="1000091186.jpg" alt="Photo 6">
+<img src="1000091192.jpg" alt="Photo 7">
+<img src="1000091188.jpg" alt="Photo 8">
+<img src="1000091183.jpg" alt="Photo 9">
+
+</div>
+
+<div class="letter">
+
+<h2>💌 A Letter From Yatheeswar</h2>
+
+<p>
+
+Dear Paithiyo ❤️,<br><br>
+
+Happy Birthday! 🎂
+
+Thank you for being such an amazing person in my life. Your smile, your kindness, and every moment we shared mean so much to me.
+
+I hope this year brings you endless happiness, success, good health, and unforgettable memories.
+
+Always keep smiling because your smile makes the world brighter. ✨
+
+Once again...
+
+<b>Happy Birthday, Paithiyo! ❤️🎉</b>
+
+</p>
+
+</div>
+
+<div class="footer">
+
+Made with ❤️ by <b>Yatheeswar</b>
+
+</div>
+
+</div>
+<script>
+
+function openGift(){
+
+document.getElementById("page1").classList.add("hidden");
+document.getElementById("page2").classList.remove("hidden");
+
+createHearts();
+createConfetti();
+
+}
+
+function createHearts(){
+
+const hearts=document.querySelector(".hearts");
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+hearts.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+},250);
+
+}
+
+function createConfetti(){
+
+for(let i=0;i<150;i++){
+
+const conf=document.createElement("div");
+
+conf.innerHTML="🎉";
+
+conf.style.position="fixed";
+
+conf.style.left=Math.random()*100+"vw";
+
+conf.style.top="-50px";
+
+conf.style.fontSize=(15+Math.random()*20)+"px";
+
+conf.style.transition="5s linear";
+
+document.body.appendChild(conf);
+
+setTimeout(()=>{
+conf.style.top="110vh";
+},50);
+
+setTimeout(()=>{
+conf.remove();
+},6000);
+
+}
+
+}
+// ---------- Background Music ----------
+
+// Replace "birthday.mp3" with your music file later.
+const bgMusic = new Audio("birthday.mp3");
+bgMusic.loop = true;
+bgMusic.volume = 0.5;
+
+document.addEventListener("click", () => {
+    bgMusic.play().catch(() => {});
+}, { once: true });
+
+// ---------- Typewriter Effect ----------
+
+const letter = `
+Dear Paithiyo ❤️,
+
+Happy Birthday! 🎂
+
+May your smile always shine bright.
+May all your dreams come true.
+Thank you for being such an amazing friend.
+
+Stay happy...
+Stay blessed...
+Keep smiling forever... ❤️
+
+— Yatheeswar
+`;
+
+function typeLetter() {
+    const p = document.querySelector(".letter p");
+    if (!p) return;
+
+    p.innerHTML = "";
+    let i = 0;
+
+    function type() {
+        if (i < letter.length) {
+            p.innerHTML += letter.charAt(i) === "\n" ? "<br>" : letter.charAt(i);
+            i++;
+            setTimeout(type, 40);
+        }
+    }
+
+    type();
+}
+
+const oldOpenGift = openGift;
+openGift = function () {
+    oldOpenGift();
+    setTimeout(typeLetter, 500);
+};
+</script>
+
+</body>
+</html>
